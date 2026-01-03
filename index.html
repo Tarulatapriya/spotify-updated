@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Music Player</title>
+
+    <!-- IMPORTANT: Not using Spotify branding -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎵</text></svg>">
+</head>
+
+<body>
+    <div class="player">
+
+        <!-- Neutral logo -->
+        <h2>Mini Music Player</h2>
+
+        <button id="theme-toggle">Toggle Theme</button>
+
+        <!-- ❌ AUTH REMOVED (THIS WAS CAUSING PHISHING FLAG) -->
+
+        <p style="opacity:0.7;font-size:14px;">
+            Demo music player project (No real login required)
+        </p>
+
+        <!-- SEARCH -->
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search songs..." />
+            <button id="search-button">🔍</button>
+        </div>
+
+        <div class="main-content-wrapper">
+
+            <!-- PLAYER -->
+            <div id="main-player-content">
+                <div class="current-song">
+                    <img id="cover" class="song-cover" src="" alt="Cover" />
+                    <h3 id="title">Select a song</h3>
+                    <canvas id="visualizer"></canvas>
+                </div>
+
+                <audio id="audio" crossorigin="anonymous"></audio>
+
+                <div class="controls">
+                    <button id="prev">⏮️</button>
+                    <button id="play">▶️</button>
+                    <button id="next">⏭️</button>
+                </div>
+
+                <div class="progress-container">
+                    <span id="current-time">0:00</span>
+                    <input type="range" id="progress" min="0" max="100" value="0" />
+                    <span id="duration">0:00</span>
+                </div>
+
+                <div class="volume-control">
+                    <label>🔊</label>
+                    <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5" />
+                </div>
+            </div>
+
+            <!-- PLAYLIST -->
+            <div class="playlist-section">
+                <ul id="playlist"></ul>
+
+                <div class="playlist-manager">
+                    <h3>Playlists</h3>
+
+                    <input type="text" id="new-playlist-name" placeholder="Playlist name" />
+                    <button id="create-playlist-btn">Create</button>
+
+                    <select id="saved-playlists">
+                        <option value="">Load playlist</option>
+                    </select>
+
+                    <button id="load-playlist-btn">Load</button>
+                    <button id="delete-playlist-btn">Delete</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
